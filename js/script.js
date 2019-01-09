@@ -69,21 +69,19 @@ let quotes = [
      they are added to the HTML string.
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/function printQuote(){
-
+    getRandomQuote(quotes);
     let newPrint = getRandomQuote(quotes);
-    Quotetodisplay += <p>quotes.quote</p>;
- 
-    if(newPrint){
-     quote = '<p class = "quote"></p>';
-     source = '<p class ="source"></p>'; 
-     citation ='<span class="citation"></span>';
-     year = '<span class="year"></span>';
-
+     QuotestoDisplay =  '<p class = "quote">quotes.quote</p>' + '<p class ="source">quotes.source</p>' + '<span class="citation">quotes.citation</span>' + '<span class="year">quotes.year</span>';
+     if(newPrint){
+     quote = '<p class = "quote">quotes.quote</p>';
+     source = '<p class ="source">quotes.source</p>'; 
+     citation = '<span class="citation">quotes.citation</span>';
+     year = '<span class="year">quotes.year</span>';
      
-       
     }  
-    document.getElementById(`quote-box`).innerHTML=  newPrint.quote + " "  + newPrint.source + " " + newPrint.citation + " "  + newPrint.year;
-
+    document.getElementById('quote-box').innerHTML = newPrint.quote + " "  + newPrint.source + " " + newPrint.citation + " "  + newPrint.year;
+    
+  }
     
 /***
   When the "Show another quote" button is clicked, the event listener 
