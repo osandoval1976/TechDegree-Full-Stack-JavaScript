@@ -15,6 +15,12 @@ FSJS project 1 - A Random Quote Generator
     - Add at least one `year` and/or `citation` property to at least one 
       quote object.
 ***/
+
+/*** Oscar first Proyect
+ * First Start with arrays of objects, this part is not hard, but have to read a few.
+ * I read some web pages, videos & team tree house videos documentations.
+ *  I was stuck in the return quotes[total], Lee and jennifer gaves a hand, I break it! of course the code.
+ * ***/
 let quotes = [
 {
         quote : "A friend may be waiting behind a stranger's face",
@@ -49,13 +55,26 @@ let quotes = [
 ];
 
 
-
+/***
 /***
   Create the `getRandomQuote` function to:
    - generate a random number 
    - use the random number to `return` a random quote object from the 
      `quotes` array.
-***/function getRandomQuote(quotes){
+
+
+     /***
+      * Oscar second part
+      * At the beginning I started with some codes errors, after that I went to the "Slack Chat" I asked for some advices,
+      * in this part took my a few time because I need to recap some information that I not remember, Array, loops, conditional
+      *  and objects, help in the slack channel and other examples from chat colegues.
+      * in this part
+      * 1- call a function 
+      * 2- how to stored the variable 
+      * 3- conditionals
+      * it is a quite practice but its help a lot to recap of this last classes, really helps a lot to learn.
+      
+***/ function getRandomQuote(quotes){
    let total= Math.floor(Math.random() * quotes.length);
    return quotes[total];
 }
@@ -69,16 +88,23 @@ let quotes = [
       - use conditionals to make sure the optional properties exist before 
      they are added to the HTML string.
    - set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/function printQuote(getRandomQuote){
-       var newLink = getRandomQuote;
-       newLink =  "<p class ='quote'>" + quotes.quote + "</P>"  + "<p class='source'>" + quotes.source + "</p>" +  "<span class='citation'>" + quotes.citation +"</span>" + "<span class='year'>" + quotes.year +"</span>";
+
+
+***/function printQuote(){
+       
+  getRandomQuote(quotes);
+       let newLink = getRandomQuote(quotes);
+       
+       txt = '<p class ="quote">'+ newLink.quote + '</P>'  +  '<p class="source">' + newLink.source +   '<span class="citation">' + newLink.citation +'</span>'+ '<span class="year">' + newLink.year +'</span>' + '</p>';
        if(newLink){
-       quote = "<p class ='quote'>" + quotes.quote + "</P>";
-       source= "<p class ='source'>" + quotes.source + "</P>";
-       citation = "<span class='citation'>" + quotes.citation + "</span>";
-       year = "<span class='year'>" + quotes.year +"</span>";
-       }
-    document.getElementById('quote-box').innerHTML = newLink;
+       quote = "<p class ='quote'>" + newLink.quote + "</P>";
+       source= "<p class ='source'>" + newLink.source + "</P>";
+       citation = "<span class='citation'>" + newLink.citation + "</span>";
+       year = "<span class='year'>" + newLink.year +"</span>";
+       }  
+      
+        
+                document.getElementById('quote-box').innerHTML = txt;
     
 }
 /***
