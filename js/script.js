@@ -15,6 +15,7 @@ FSJS project 1 - A Random Quote Generator
     - Add at least one `year` and/or `citation` property to at least one 
       quote object.
 ***/
+let QuotestoDisplay = ""
 let quotes = [
 {
         quote : "A friend may be waiting behind a stranger's face",
@@ -73,10 +74,10 @@ let quotes = [
     let newPrint = getRandomQuote(quotes);
      QuotestoDisplay =  '<p class = "quote">quotes.quote</p>' + '<p class ="source">quotes.source</p>' + '<span class="citation">quotes.citation</span>' + '<span class="year">quotes.year</span>';
      if(newPrint){
-     quote = '<p class = "quote">quotes.quote</p>';
-     source = '<p class ="source">quotes.source</p>'; 
-     citation = '<span class="citation">quotes.citation</span>';
-     year = '<span class="year">quotes.year</span>';
+     quotes.quote = '<p class = "quote">quotes.quote</p>';
+     quotes.source = '<p class ="source">quotes.source</p>'; 
+     quotes.citation = '<span class="citation">quotes.citation</span>';
+     quotes.year = '<span class="year">quotes.year</span>';
      
     }  
     document.getElementById('quote-box').innerHTML = newPrint.quote + " "  + newPrint.source + " " + newPrint.citation + " "  + newPrint.year;
